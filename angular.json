@@ -13,10 +13,7 @@
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/ngx-bootstrap-snackbar/tsconfig.lib.json",
-            "project": "projects/ngx-bootstrap-snackbar/ng-package.json",
-            "styles": [
-              "projects/ngx-bootstrap-snackbar/src/lib/ngx-bootstrap-snackbar.component.scss"
-            ]
+            "project": "projects/ngx-bootstrap-snackbar/ng-package.json"
           },
           "configurations": {
             "production": {
