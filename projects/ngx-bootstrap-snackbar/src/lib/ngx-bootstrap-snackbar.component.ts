@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'lib-ngx-bootstrap-snackbar',
+  selector: 'ngx-bootstrap-snackbar',
   template: `
-    <p></p>
+    <ng-container></ng-container>
   `,
   styleUrls: ['./ngx-bootstrap-snackbar.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class NgxBootstrapSnackbarComponent implements OnInit {
 

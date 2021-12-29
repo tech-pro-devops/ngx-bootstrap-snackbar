@@ -1,1 +1,9 @@
-<button (click)="showMsg()">Success</button>
+<ngx-bootstrap-snackbar></ngx-bootstrap-snackbar>
+
+<div class="example-button-row">
+  <button mat-stroked-button (click)="default()">Default</button>
+  <button mat-flat-button color="primary" class="info" (click)="info()">Info</button>
+  <button mat-flat-button color="primary" class="success" (click)="success()">Success</button>
+  <button mat-flat-button color="primary" class="danger" (click)="error()">Error</button>
+  <button mat-flat-button color="primary" class="warning" (click)="warn()">Warning</button>
+</div>
