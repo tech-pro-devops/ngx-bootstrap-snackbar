@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar, MatSnackBarConfig, MatSnackBarRef } from '@angular/material/snack-bar';
 import { SnackBarConfigModel } from './ngx-bootstrap-snackbar.component';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class NgxBootstrapSnackbarService {
 
   constructor(
