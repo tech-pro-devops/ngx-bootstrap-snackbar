@@ -16,7 +16,6 @@ import { NgxBootstrapSnackbarModule } from '@tech-pro/ngx-bootstrap-snackbar';
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatSnackBarModule,
     NgxBootstrapSnackbarModule.forRoot()
   ],
   providers: [],
