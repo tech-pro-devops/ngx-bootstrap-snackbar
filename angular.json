@@ -3,5 +3,169 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "ngx-bootstrap-snackbar": {
+      "projectType": "library",
+      "root": "projects/ngx-bootstrap-snackbar",
+      "sourceRoot": "projects/ngx-bootstrap-snackbar/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ngx-bootstrap-snackbar/tsconfig.lib.json",
+            "project": "projects/ngx-bootstrap-snackbar/ng-package.json",
+            "styles": [
+              "projects/ngx-bootstrap-snackbar/src/lib/ngx-bootstrap-snackbar.component.scss"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-bootstrap-snackbar/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-bootstrap-snackbar/src/test.ts",
+            "tsConfig": "projects/ngx-bootstrap-snackbar/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-bootstrap-snackbar/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-bootstrap-snackbar/tsconfig.lib.json",
+              "projects/ngx-bootstrap-snackbar/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngx-bootstrap-snackbar-demo": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/ngx-bootstrap-snackbar-demo",
+      "sourceRoot": "projects/ngx-bootstrap-snackbar-demo/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ngx-bootstrap-snackbar-demo",
+            "index": "projects/ngx-bootstrap-snackbar-demo/src/index.html",
+            "main": "projects/ngx-bootstrap-snackbar-demo/src/main.ts",
+            "polyfills": "projects/ngx-bootstrap-snackbar-demo/src/polyfills.ts",
+            "tsConfig": "projects/ngx-bootstrap-snackbar-demo/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/ngx-bootstrap-snackbar-demo/src/favicon.ico",
+              "projects/ngx-bootstrap-snackbar-demo/src/assets"
+            ],
+            "styles": [
+              "projects/ngx-bootstrap-snackbar-demo/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ngx-bootstrap-snackbar-demo/src/environments/environment.ts",
+                  "with": "projects/ngx-bootstrap-snackbar-demo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ngx-bootstrap-snackbar-demo:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ngx-bootstrap-snackbar-demo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ngx-bootstrap-snackbar-demo:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-bootstrap-snackbar-demo/src/test.ts",
+            "polyfills": "projects/ngx-bootstrap-snackbar-demo/src/polyfills.ts",
+            "tsConfig": "projects/ngx-bootstrap-snackbar-demo/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-bootstrap-snackbar-demo/karma.conf.js",
+            "assets": [
+              "projects/ngx-bootstrap-snackbar-demo/src/favicon.ico",
+              "projects/ngx-bootstrap-snackbar-demo/src/assets"
+            ],
+            "styles": [
+              "projects/ngx-bootstrap-snackbar-demo/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-bootstrap-snackbar-demo/tsconfig.app.json",
+              "projects/ngx-bootstrap-snackbar-demo/tsconfig.spec.json",
+              "projects/ngx-bootstrap-snackbar-demo/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ngx-bootstrap-snackbar-demo/e2e/protractor.conf.js",
+            "devServerTarget": "ngx-bootstrap-snackbar-demo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ngx-bootstrap-snackbar-demo:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ngx-bootstrap-snackbar"
 }

@@ -9,6 +9,9 @@
 
 # dependencies
 /node_modules
+# dependencies
+/projects/ngx-bootstrap-snackbar/node_modules
+/projects/ngx-bootstrap-snackbar-demo/node_modules
 
 # profiling files
 chrome-profiler-events*.json

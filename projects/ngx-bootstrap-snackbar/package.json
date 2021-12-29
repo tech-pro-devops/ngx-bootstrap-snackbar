@@ -1,0 +1,14 @@
+{
+  "name": "ngx-bootstrap-snackbar",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "11.0.5",
+    "@angular/core": "11.0.5",
+    "@angular/animations": "11.2.13",
+    "@angular/cdk": "11.2.13",
+    "@angular/material": "11.2.13"
+  },
+  "dependencies": {
+    "tslib": "2.0.0"
+  }
+}
