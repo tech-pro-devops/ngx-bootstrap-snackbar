@@ -1,5 +1,5 @@
 {
-  "name": "ngx-bootstrap-snackbar",
+  "name": "ngx-bootstarp-snackbar",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "11.0.5",
@@ -10,5 +10,29 @@
   },
   "dependencies": {
     "tslib": "2.0.0"
-  }
+  },
+  "description": "This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.9.",
+  "main": "karma.conf.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tech-pro-devops/ngx-bootstrap-snackbar.git"
+  },
+  "keywords": [
+    "snackbar",
+    "toast",
+    "material",
+    "snackbar",
+    "bootstrap",
+    "snackbar"
+  ],
+  "author": "tech-pro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tech-pro-devops/ngx-bootstrap-snackbar/issues"
+  },
+  "homepage": "https://github.com/tech-pro-devops/ngx-bootstrap-snackbar#readme"
 }
