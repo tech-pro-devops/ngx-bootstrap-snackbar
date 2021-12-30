@@ -1,6 +1,6 @@
 {
-  "name": "npm-workspace",
-  "version": "0.0.0",
+  "name": "ngx-bootstrap-snackbar",
+  "version": "0.0.5",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -21,7 +21,7 @@
     "@angular/platform-browser": "11.0.5",
     "@angular/platform-browser-dynamic": "11.0.5",
     "@angular/router": "11.0.5",
-    "@tech-pro/ngx-bootstrap-snackbar": "0.0.4",
+    "@tech-pro/ngx-bootstrap-snackbar": "0.0.7",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

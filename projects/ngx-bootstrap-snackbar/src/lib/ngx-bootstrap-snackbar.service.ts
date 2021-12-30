@@ -14,7 +14,7 @@ export class NgxBootstrapSnackbarService {
       duration: configuration?.duration || 3500,
       horizontalPosition: configuration?.horizontalPosition || 'center',
       verticalPosition: configuration?.verticalPosition || 'bottom',
-      panelClass: configuration?.panelClass || ['alert']
+      panelClass: configuration?.panelClass || ['alert','alert-primary']
     }, configuration?.hideAutomatically);
   }
 
@@ -23,7 +23,7 @@ export class NgxBootstrapSnackbarService {
       duration: configuration?.duration || 3500,
       horizontalPosition: configuration?.horizontalPosition || 'center',
       verticalPosition: configuration?.verticalPosition || 'bottom',
-      panelClass: configuration?.panelClass || ['alert','alert-primary']
+      panelClass: configuration?.panelClass || ['alert','alert-info']
     }, configuration?.hideAutomatically);
   }
 
