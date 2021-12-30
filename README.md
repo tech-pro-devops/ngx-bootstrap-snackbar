@@ -1,27 +1,154 @@
-# NpmWorkspace
+# ngx-bootstrap-snackbar
+> Angular 11 component for Bootstrap Snackbar (AKA Toast) notifications. 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+[Stackblitz](https://stackblitz.com/edit/angular-ivy-hhbe3r)
+[Demo](https://angular-ivy-hhbe3r.stackblitz.io)
 
-## Development server
+## Pre-requisites
+    Install the angular material package
+    [Angular Material](https://material.angular.io/guide/getting-started)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+    Import Angular Material theme : 
+    @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-## Code scaffolding
+## Installation
+    npm install --save @tech-pro/ngx-bootstrap-snackbar
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Usage
 
-## Build
+### Import `NgxBootstrapSnackbarModule`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```javascript
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AppComponent} from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxBootstrapSnackbarModule } from '@tech-pro/ngx-bootstrap-snackbar';
 
-## Running unit tests
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    NgxBootstrapSnackbarModule.forRoot()
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Place the `ngx-bootstrap-snackbar` tag on your app.component.html template
 
-## Running end-to-end tests
+```html
+<ngx-bootstrap-snackbar></ngx-bootstrap-snackbar>
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+### Use the `NgxBootstrapSnackbarService` to control snackbars
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+import { NgxBootstrapSnackbarService } from '@tech-pro/ngx-bootstrap-snackbar';
+
+
+```typescript
+import {Component} from '@angular/core';
+import { NgxBootstrapSnackbarService } from '@tech-pro/ngx-bootstrap-snackbar';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <ngx-bootstrap-snackbar></ngx-bootstrap-snackbar>
+  `
+})
+export class AppComponent {
+  constructor(private ngxBootstrapSnackbar: NgxBootstrapSnackbarService) {}
+}
+```
+
+## Example
+```typescript
+import {Component} from '@angular/core';
+import { NgxBootstrapSnackbarService } from '@tech-pro/ngx-bootstrap-snackbar';
+
+@Component({
+  selector: 'app-root',
+  template: `
+      <ngx-bootstrap-snackbar></ngx-bootstrap-snackbar>
+      <div class="example-button-row">
+        <button (click)="default()">Default</button>
+        <button class="info" (click)="info()">Info</button>
+        <button class="success" (click)="success()">Success</button>
+        <button class="danger" (click)="error()">Error</button>
+        <button class="warning" (click)="warn()">Warning</button>
+      </div>
+
+  `,
+  styles: [`
+    .example-button-row button {
+      margin-right: 8px;
+      box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2),0px 0px 0px 0px rgba(0, 0, 0, 0.14),0px 0px 0px 0px rgba(0, 0, 0, 0.12);
+      box-sizing: border-box;
+      position: relative;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      cursor: pointer;
+      outline: none;
+      border: none;
+      -webkit-tap-highlight-color: transparent;
+      display: inline-block;
+      white-space: nowrap;
+      text-decoration: none;
+      vertical-align: baseline;
+      text-align: center;
+      min-width: 64px;
+      line-height: 36px;
+      padding: 0 16px;
+      border-radius: 4px;
+      overflow: visible;
+    }
+    .info {
+      color: #004085 !important;
+      background-color: #cce5ff !important;
+      border-color: #b8daff;
+    }
+    .success {
+        color: #155724 !important;
+        background-color: #d4edda !important;
+        border-color: #c3e6cb;
+    }
+    .danger {
+        color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+    }
+    .warning {
+        color: #856404;
+        background-color: #fff3cd;
+        border-color: #ffeeba;
+    }
+  `]
+})
+export class AppComponent {
+  constructor(private ngxBootstrapSnackbar: NgxBootstrapSnackbarService) {}
+
+  default() {
+    this.ngxBootstrapSnackbar.default("I am Default Msg!");
+  }
+  success() {
+    this.ngxBootstrapSnackbar.success("I am Success Msg!");
+  }
+  error() {
+    this.ngxBootstrapSnackbar.error("I am Error Msg!");
+  }
+  info() {
+    this.ngxBootstrapSnackbar.info("I am Info Msg!");
+  }
+  warn() {
+    this.ngxBootstrapSnackbar.warn("I am Warning Msg!");
+  }
+
+}
+```
