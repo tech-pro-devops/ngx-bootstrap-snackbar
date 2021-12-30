@@ -3,8 +3,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NgxBootstrapSnackbarModule } from 'projects/ngx-bootstrap-snackbar/src/public-api';
 import { MatButtonModule } from '@angular/material/button';
+
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NgxBootstrapSnackbarModule } from '@tech-pro/ngx-bootstrap-snackbar';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    NgxBootstrapSnackbarModule
+    NgxBootstrapSnackbarModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

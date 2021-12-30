@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { NgxBootstrapSnackbarService } from 'projects/ngx-bootstrap-snackbar/src/public-api';
+import { NgxBootstrapSnackbarService } from '@tech-pro/ngx-bootstrap-snackbar';
+
 
 @Component({
   selector: 'app-root',
