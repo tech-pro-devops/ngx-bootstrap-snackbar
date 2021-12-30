@@ -1,6 +1,6 @@
 {
   "name": "@tech-pro/ngx-bootstrap-snackbar",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "peerDependencies": {
     "@angular/common": "11.0.5",
     "@angular/core": "11.0.5",

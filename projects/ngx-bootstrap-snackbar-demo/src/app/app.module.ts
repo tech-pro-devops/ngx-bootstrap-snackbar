@@ -4,8 +4,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MatButtonModule } from '@angular/material/button';
-
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgxBootstrapSnackbarModule } from '@tech-pro/ngx-bootstrap-snackbar';
 
 @NgModule({
