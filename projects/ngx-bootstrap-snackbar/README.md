@@ -1,7 +1,8 @@
 # ngx-bootstrap-snackbar
-> Angular 11 component for Bootstrap Snackbar (AKA Toast) notifications. 
+> Angular 11+ component for Bootstrap Snackbar (AKA Toast) notifications. 
 
 [Stackblitz](https://stackblitz.com/edit/angular-ivy-hhbe3r)
+
 [Demo](https://angular-ivy-hhbe3r.stackblitz.io)
 
 ## Pre-requisites
@@ -66,10 +67,36 @@ export class AppComponent {
 }
 ```
 
+**Options**
+
+Use these properties to customize the snackbar component.
+
+| Name | Description | Type | Default | Optional |
+| --- | --- | --- | --- | --- |
+| horizontal-position | The position where the snackbar appears horizontally| `start`, `center`, `end`, `left`, `right`| `center` | true |
+| vertical-position | The position where the snackbar appears vertically| `top`, `bottom`| `bottom` | true |
+| duration  | Number of milliseconds before the snackbar closes | number | `3000` | true |
+| hideAutomatically | To hide the snackbar after the particular time | boolean | `true` | true |
+| action | Action Button Text | string |  | true |
+| panelClass | Custom class to append to the snackbar | string | | true |
+
+
+**Methods**
+
+| Name | Description | Return |
+| --- | --- | --- |
+| default | Open the snackbar with primary(`#004085`) bootstrap theme color | snackbarRef | 
+| success | Open the snackbar with success(`#155724`) bootstrap theme color | snackbarRef |
+| error | Open the snackbar with danger(`#721c24`) bootstrap theme color | snackbarRef |
+| info | Open the snackbar with info(`#0c5460`) bootstrap theme color | snackbarRef | 
+| warn | Open the snackbar with warn(`#856404`) bootstrap theme color | snackbarRef |
+| custom | Open the snackbar with black blackground. Pass the panel class for custom color  | snackbarRef |
+| close | Dismiss the snackbar |  |
+
 ## Example
 ```typescript
 import {Component} from '@angular/core';
-import { NgxBootstrapSnackbarService } from '@tech-pro/ngx-bootstrap-snackbar';
+import { MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition, NgxBootstrapSnackbarService, SnackBarConfigModel } from '@tech-pro/ngx-bootstrap-snackbar';
 
 @Component({
   selector: 'app-root',
@@ -86,65 +113,43 @@ import { NgxBootstrapSnackbarService } from '@tech-pro/ngx-bootstrap-snackbar';
   `,
   styles: [`
     .example-button-row button {
-      margin-right: 8px;
-      box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2),0px 0px 0px 0px rgba(0, 0, 0, 0.14),0px 0px 0px 0px rgba(0, 0, 0, 0.12);
-      box-sizing: border-box;
-      position: relative;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      cursor: pointer;
-      outline: none;
-      border: none;
-      -webkit-tap-highlight-color: transparent;
-      display: inline-block;
-      white-space: nowrap;
-      text-decoration: none;
-      vertical-align: baseline;
-      text-align: center;
-      min-width: 64px;
-      line-height: 36px;
-      padding: 0 16px;
-      border-radius: 4px;
-      overflow: visible;
-    }
-    .info {
-      color: #004085 !important;
-      background-color: #cce5ff !important;
-      border-color: #b8daff;
-    }
-    .success {
-        color: #155724 !important;
-        background-color: #d4edda !important;
-        border-color: #c3e6cb;
-    }
-    .danger {
-        color: #721c24;
-        background-color: #f8d7da;
-        border-color: #f5c6cb;
-    }
-    .warning {
-        color: #856404;
-        background-color: #fff3cd;
-        border-color: #ffeeba;
-    }
+      margin-right: 8px;box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2),0px 0px 0px 0px rgba(0, 0, 0, 0.14),0px 0px 0px 0px rgba(0, 0, 0, 0.12);box-sizing: border-box;position: relative;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;cursor: pointer;outline: none; border: none;-webkit-tap-highlight-color: transparent;display: inline-block;white-space: nowrap;text-decoration: none;vertical-align: baseline;text-align: center;min-width: 64px;line-height: 36px;padding: 0 16px;border-radius: 4px;overflow: visible;}
+    .info {color: #004085;background-color: #cce5ff;border-color: b8daff;}
+    .success {color: #155724;background-color: #d4edda;border-color: #c3e6cb;}
+    .danger {color: #721c24;background-color: #f8d7da;border-color: #f5c6cb;}
+    .warning {color: #856404;background-color: #fff3cd;border-color: #ffeeba;}
   `]
 })
 export class AppComponent {
+
+  horizontalPosition: MatSnackBarHorizontalPosition = 'start';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+  duration: number = 3000;
+  hideAutomatically: boolean = true;
+  action: string = null;
+
   constructor(private ngxBootstrapSnackbar: NgxBootstrapSnackbarService) {}
 
+    get config() {
+    return {
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+        duration: this.duration,
+        hideAutomatically: this.hideAutomatically,
+        action: this.action
+        }
+    }
   default() {
-    this.ngxBootstrapSnackbar.default("I am Default Msg!");
+    this.ngxBootstrapSnackbar.default("I am Default Msg!", this.config);
   }
   success() {
-    this.ngxBootstrapSnackbar.success("I am Success Msg!");
+    this.ngxBootstrapSnackbar.success("I am Success Msg!", this.config);
   }
   error() {
-    this.ngxBootstrapSnackbar.error("I am Error Msg!");
+    this.ngxBootstrapSnackbar.error("I am Error Msg!", this.config);
   }
   info() {
-    this.ngxBootstrapSnackbar.info("I am Info Msg!");
+    this.ngxBootstrapSnackbar.info("I am Info Msg!", this.config);
   }
   warn() {
     this.ngxBootstrapSnackbar.warn("I am Warning Msg!");
