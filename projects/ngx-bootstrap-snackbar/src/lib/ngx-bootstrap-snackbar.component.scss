@@ -1,25 +1,30 @@
 ::ng-deep .cdk-overlay-container .alert {
-  &.alert-primary {
+  &.alert-primary,
+  &.alert-primary .mat-simple-snackbar-action {
     color: #004085;
     background-color: #cce5ff;
     border-color: #b8daff;
   }
-  &.alert-success {
+  &.alert-success,
+  &.alert-success .mat-simple-snackbar-action {
       color: #155724;
       background-color: #d4edda;
       border-color: #c3e6cb;
   }
-  &.alert-danger {
+  &.alert-danger,
+  &.alert-danger .mat-simple-snackbar-action {
       color: #721c24;
       background-color: #f8d7da;
       border-color: #f5c6cb;
   }
-  &.alert-warning {
+  &.alert-warning,
+  &.alert-warning .mat-simple-snackbar-action {
       color: #856404;
       background-color: #fff3cd;
       border-color: #ffeeba;
   }
-  &.alert-info {
+  &.alert-info,
+  &.alert-info .mat-simple-snackbar-action {
     color: #0c5460;
     background-color: #d1ecf1;
     border-color: #bee5eb;
