@@ -21,6 +21,7 @@ export class NgxBootstrapSnackbarComponent implements OnInit {
 export declare type MatSnackBarHorizontalPosition = 'start' | 'center' | 'end' | 'left' | 'right';
 export declare type MatSnackBarVerticalPosition = 'top' | 'bottom';
 export interface SnackBarConfigModel {
+    action?: string;
     horizontalPosition?: MatSnackBarHorizontalPosition;
     verticalPosition?: MatSnackBarVerticalPosition;
     duration?: number;

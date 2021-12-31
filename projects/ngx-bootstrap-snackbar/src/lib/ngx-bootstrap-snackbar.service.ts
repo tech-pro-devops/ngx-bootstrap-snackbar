@@ -9,8 +9,8 @@ export class NgxBootstrapSnackbarService {
     private readonly snackBar: MatSnackBar
   ) { }
 
-  default(message: string, action?: string, configuration?: SnackBarConfigModel) {
-    return this.show(message, action, {
+  default(message: string, configuration?: SnackBarConfigModel) {
+    return this.show(message, configuration?.action, {
       duration: configuration?.duration || 3500,
       horizontalPosition: configuration?.horizontalPosition || 'center',
       verticalPosition: configuration?.verticalPosition || 'bottom',
@@ -18,8 +18,8 @@ export class NgxBootstrapSnackbarService {
     }, configuration?.hideAutomatically);
   }
 
-  info(message: string, action?: string, configuration?: SnackBarConfigModel) {
-    return this.show(message, action, {
+  info(message: string, configuration?: SnackBarConfigModel) {
+    return this.show(message, configuration?.action, {
       duration: configuration?.duration || 3500,
       horizontalPosition: configuration?.horizontalPosition || 'center',
       verticalPosition: configuration?.verticalPosition || 'bottom',
@@ -27,8 +27,8 @@ export class NgxBootstrapSnackbarService {
     }, configuration?.hideAutomatically);
   }
 
-  success(message: string, action?: string, configuration?: SnackBarConfigModel) {
-    return this.show(message, action, {
+  success(message: string, configuration?: SnackBarConfigModel) {
+    return this.show(message, configuration?.action, {
       duration: configuration?.duration || 3500,
       horizontalPosition: configuration?.horizontalPosition || 'center',
       verticalPosition: configuration?.verticalPosition || 'bottom',
@@ -36,8 +36,8 @@ export class NgxBootstrapSnackbarService {
     }, configuration?.hideAutomatically);
   }
 
-  warn(message: string, action?: string, configuration?: SnackBarConfigModel) {
-    return this.show(message, action, {
+  warn(message: string, configuration?: SnackBarConfigModel) {
+    return this.show(message, configuration?.action, {
       duration: configuration?.duration || 3000,
       horizontalPosition: configuration?.horizontalPosition || 'center',
       verticalPosition: configuration?.verticalPosition || 'bottom',
@@ -45,13 +45,26 @@ export class NgxBootstrapSnackbarService {
     }, configuration?.hideAutomatically);
   }
 
-  error(message: string, action?: string, configuration?: SnackBarConfigModel) {
-    return this.show(message, action, {
+  error(message: string, configuration?: SnackBarConfigModel) {
+    return this.show(message, configuration?.action, {
       duration: configuration?.duration || 3000,
       horizontalPosition: configuration?.horizontalPosition || 'center',
       verticalPosition: configuration?.verticalPosition || 'bottom',
       panelClass: configuration?.panelClass || ['alert','alert-danger']
     }, configuration?.hideAutomatically);
+  }
+
+  custom(message: string, configuration?: SnackBarConfigModel) {
+    return this.show(message, configuration?.action, {
+      duration: configuration?.duration || 3000,
+      horizontalPosition: configuration?.horizontalPosition || 'center',
+      verticalPosition: configuration?.verticalPosition || 'bottom',
+      panelClass: configuration?.panelClass || ['alert']
+    }, configuration?.hideAutomatically);
+  }
+
+  close() {
+    this.snackBar.dismiss();
   }
 
   private show(message: string, action: string, configuration: MatSnackBarConfig, hideAutomatically: boolean = true): MatSnackBarRef<any> {
