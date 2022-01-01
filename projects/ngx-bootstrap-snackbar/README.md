@@ -71,14 +71,14 @@ export class AppComponent {
 
 Use these properties to customize the snackbar component.
 
-| Name | Description | Type | Default | Optional |
+| Name | Description | Options | Default | Optional |
 | --- | --- | --- | --- | --- |
 | horizontal-position | The position where the snackbar appears horizontally| `start`, `center`, `end`, `left`, `right`| `center` | true |
 | vertical-position | The position where the snackbar appears vertically| `top`, `bottom`| `bottom` | true |
-| duration  | Number of milliseconds before the snackbar closes | number | `3000` | true |
-| hideAutomatically | To hide the snackbar after the particular time | boolean | `true` | true |
-| action | Action Button Text | string |  | true |
-| panelClass | Custom class to append to the snackbar | string | | true |
+| duration  | Number of milliseconds before the snackbar closes |  | `3000` | true |
+| hideAutomatically | To hide the snackbar after the particular time |  | `true` | true |
+| action | Action Button Text |  |  | true |
+| panelClass | Custom class to append to the snackbar |  | | true |
 
 
 **Methods**
