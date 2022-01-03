@@ -15,7 +15,7 @@ import { MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition, NgxBootstra
       width: 50%;
     }
     button {
-      margin-right: 8px;
+      margin: 4px;
       box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2),0px 0px 0px 0px rgba(0, 0, 0, 0.14),0px 0px 0px 0px rgba(0, 0, 0, 0.12);
       box-sizing: border-box;
       position: relative;
@@ -32,7 +32,7 @@ import { MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition, NgxBootstra
       text-decoration: none;
       vertical-align: baseline;
       text-align: center;
-      min-width: 64px;
+      min-width: 84px;
       line-height: 36px;
       padding: 0 16px;
       border-radius: 4px;

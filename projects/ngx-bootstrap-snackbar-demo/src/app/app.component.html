@@ -2,47 +2,6 @@
 <div fxLayout="column" fxLayoutAlign="center center">
   <h2>ngx-bootstrap-snackbar Demo</h2>
   <div class="box" fxLayout="column" fxLayoutAlign="center start">
-    <label id="example-radio-group-label">Set Horizontal Position</label>
-    <br>
-    <mat-radio-group [(ngModel)]="horizontalPosition">
-      <mat-radio-button class="example-radio-button" [value]="'start'">Start</mat-radio-button>
-      <mat-radio-button class="example-radio-button" [value]="'center'">Center</mat-radio-button>
-      <mat-radio-button class="example-radio-button" [value]="'end'">End</mat-radio-button>
-      <mat-radio-button class="example-radio-button" [value]="'left'">Left</mat-radio-button>
-      <mat-radio-button class="example-radio-button" [value]="'right'">Right</mat-radio-button>
-    </mat-radio-group>
-
-    <br>
-    <br>
-
-    <label id="example-radio-group-label">Set Vertical Position</label>
-    <br>
-    <mat-radio-group [(ngModel)]="verticalPosition">
-      <mat-radio-button class="example-radio-button" [value]="'top'">Top</mat-radio-button>
-      <mat-radio-button class="example-radio-button" [value]="'bottom'">Bottom</mat-radio-button>
-    </mat-radio-group>
-
-    <br><br>
-
-    <mat-form-field>
-      <mat-label>Duration (in ms)</mat-label>
-      <input matInput [(ngModel)]="duration" placeholder="Duration">
-    </mat-form-field>
-    <br>
-
-    <mat-checkbox [(ngModel)]="hideAutomatically">Hide Automatically</mat-checkbox>&nbsp;&nbsp;
-    <button (click)="close()">Close Snackbar</button>
-    <br>
-    <br>
-
-    <mat-form-field floatLabel="always">
-      <mat-label>Action Button Name</mat-label>
-      <input matInput [(ngModel)]="action">
-    </mat-form-field>
-
-    <br>
-    <br>
-
     <div class="example-button-row">
       <button (click)="default()">Default</button>
       <button class="info" (click)="info()">Info</button>
@@ -50,6 +9,62 @@
       <button class="danger" (click)="error()">Error</button>
       <button class="warning" (click)="warn()">Warning</button>
     </div>
+    <br />
+    <label id="example-radio-group-label">Set Horizontal Position</label>
+    <br />
+    <mat-radio-group [(ngModel)]="horizontalPosition">
+      <mat-radio-button class="example-radio-button" [value]="'start'"
+        >Start</mat-radio-button
+      >
+      <mat-radio-button class="example-radio-button" [value]="'center'"
+        >Center</mat-radio-button
+      >
+      <mat-radio-button class="example-radio-button" [value]="'end'"
+        >End</mat-radio-button
+      >
+      <mat-radio-button class="example-radio-button" [value]="'left'"
+        >Left</mat-radio-button
+      >
+      <mat-radio-button class="example-radio-button" [value]="'right'"
+        >Right</mat-radio-button
+      >
+    </mat-radio-group>
+
+    <br />
+    <br />
+
+    <label id="example-radio-group-label">Set Vertical Position</label>
+    <br />
+    <mat-radio-group [(ngModel)]="verticalPosition">
+      <mat-radio-button class="example-radio-button" [value]="'top'"
+        >Top</mat-radio-button
+      >
+      <mat-radio-button class="example-radio-button" [value]="'bottom'"
+        >Bottom</mat-radio-button
+      >
+    </mat-radio-group>
+
+    <br /><br />
+
+    <mat-form-field>
+      <mat-label>Duration (in ms)</mat-label>
+      <input matInput [(ngModel)]="duration" placeholder="Duration" />
+    </mat-form-field>
+    <br />
+
+    <mat-checkbox [(ngModel)]="hideAutomatically"
+      >Hide Automatically</mat-checkbox
+    >&nbsp;&nbsp;
+    <button (click)="close()">Close Snackbar</button>
+    <br />
+    <br />
+
+    <mat-form-field floatLabel="always">
+      <mat-label>Action Button Name</mat-label>
+      <input matInput [(ngModel)]="action" />
+    </mat-form-field>
+
+    <br />
+    <br />
   </div>
 </div>
-

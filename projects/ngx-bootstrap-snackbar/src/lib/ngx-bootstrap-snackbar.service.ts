@@ -11,7 +11,7 @@ export class NgxBootstrapSnackbarService {
 
   default(message: string, configuration?: SnackBarConfigModel) {
     return this.show(message, configuration?.action, {
-      duration: configuration?.duration || 3500,
+      duration: configuration?.duration || 3000,
       horizontalPosition: configuration?.horizontalPosition || 'center',
       verticalPosition: configuration?.verticalPosition || 'bottom',
       panelClass: configuration?.panelClass || ['alert','alert-primary']
@@ -20,7 +20,7 @@ export class NgxBootstrapSnackbarService {
 
   info(message: string, configuration?: SnackBarConfigModel) {
     return this.show(message, configuration?.action, {
-      duration: configuration?.duration || 3500,
+      duration: configuration?.duration || 3000,
       horizontalPosition: configuration?.horizontalPosition || 'center',
       verticalPosition: configuration?.verticalPosition || 'bottom',
       panelClass: configuration?.panelClass || ['alert','alert-info']
@@ -29,7 +29,7 @@ export class NgxBootstrapSnackbarService {
 
   success(message: string, configuration?: SnackBarConfigModel) {
     return this.show(message, configuration?.action, {
-      duration: configuration?.duration || 3500,
+      duration: configuration?.duration || 3000,
       horizontalPosition: configuration?.horizontalPosition || 'center',
       verticalPosition: configuration?.verticalPosition || 'bottom',
       panelClass: configuration?.panelClass || ['alert','alert-success']
